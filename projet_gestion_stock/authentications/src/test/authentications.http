@@ -1,0 +1,22 @@
+### Register new user
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "id_enterprise": 1
+}
+
+### Login an user
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
