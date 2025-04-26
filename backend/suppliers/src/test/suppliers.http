@@ -1,0 +1,18 @@
+### 1. Créer un fournisseur (POST)
+POST http://localhost:8086/suppliers
+Content-Type: application/json
+
+{
+  "name": "Fournisseur Alpha",
+  "email": "alpha@supplier.com",
+  "phoneNumber": "+32411122334"
+}
+
+### 2. Récupérer tous les fournisseurs (GET)
+GET http://localhost:8086/suppliers
+
+### 3. Récupérer un fournisseur par ID (GET)
+GET http://localhost:8086/suppliers/1
+
+### 4. Supprimer un fournisseur par ID (DELETE)
+DELETE http://localhost:8086/suppliers/1
