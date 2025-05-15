@@ -1,6 +1,7 @@
 package com.taron.suppliers;
 
 import com.taron.suppliers.models.Supplier;
+import jakarta.ws.rs.PATCH;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,5 +43,19 @@ public class SuppliersController {
     public ResponseEntity<Void> deleteOne(@PathVariable int id) {
         service.deleteOne(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/getAllSuppliers/{idEnterprise}")
+    public List<Supplier> getAllSupliersByEnterprise(@PathVariable int idEnterprise){
+        return this.service.getAllSupliersByEnterprise(idEnterprise);
+    }
+
+    @PatchMapping("/{id}")
+    Supplier updateSupplier(@PathVariable int id, @RequestBody Supplier newSupplier){
+        Supplier supplier = getById(id);
+        supplier.setEmail(newSupplier.getEmail());
+        supplier.setName(newSupplier.getName());
+        supplier.setPhoneNumber(newSupplier.getPhoneNumber());
+        return this.service.createOne(supplier);
     }
 }

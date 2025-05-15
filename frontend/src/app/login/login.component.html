@@ -12,7 +12,10 @@
         <!-- Mot de passe -->
         <div class="mb-3">
           <label for="password" class="form-label">Mot de passe</label>
-          <input type="password" id="password" class="form-control" placeholder="Entrez votre mot de passe" required [(ngModel)]="password" name="password" />
+          <input [type]="showPassword ? 'text' : 'password'" id="password" class="form-control" placeholder="Entrez votre mot de passe" required [(ngModel)]="password" name="password" />
+          <button type="button" class="btn btn-outline-secondary" style="margin-top: 3%;" (click)="showPassword = !showPassword">
+            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+          </button>
         </div>
   
         <!-- Button Submit -->

@@ -13,6 +13,8 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   rememberMe: boolean = false;
+  showPassword = false;
+
 
 
   constructor(private router: Router, public authService : AuthService) {}
@@ -66,6 +68,9 @@ export class LoginComponent {
     
   }
 
+
+
+  
   // Fonction pour envoyer les données de connexion (email, mot de passe)
   async loginUser(email: string, password: string) {
     try {

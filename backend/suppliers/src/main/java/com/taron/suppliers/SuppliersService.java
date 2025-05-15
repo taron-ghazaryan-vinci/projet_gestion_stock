@@ -1,8 +1,10 @@
 package com.taron.suppliers;
 
 import com.taron.suppliers.models.Supplier;
+import com.taron.suppliers.models.SupplyEnterprise;
 import com.taron.suppliers.repositories.OrdersProxy;
 import com.taron.suppliers.repositories.SuppliersRepository;
+import com.taron.suppliers.repositories.SupplyEnterpriseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +15,11 @@ public class SuppliersService {
     private final OrdersProxy ordersProxy;
     private final SuppliersRepository repository;
 
-    public SuppliersService(SuppliersRepository repository, OrdersProxy ordersProxy) {
+    private final SupplyEnterpriseRepository supplyEnterpriseRepository;
+    public SuppliersService(SuppliersRepository repository, OrdersProxy ordersProxy, SupplyEnterpriseRepository supplyEnterpriseRepository) {
         this.repository = repository;
         this.ordersProxy = ordersProxy;
+        this.supplyEnterpriseRepository = supplyEnterpriseRepository;
     }
 
     public List<Supplier> getAll() {
@@ -31,7 +35,8 @@ public class SuppliersService {
     }
 
     public boolean existsByEmail(String email) {
-        return repository.existsByEmail(email);
+        return repository.
+                existsByEmail(email);
     }
 
     public boolean existsByPhoneNumber(String phoneNumber) {
@@ -47,5 +52,20 @@ public class SuppliersService {
         }
 
         repository.deleteById(id);
+    }
+
+    public List<Supplier> getAllSupliersByEnterprise(int idEnterprise){
+        List<SupplyEnterprise> supplyEnterprise = this.supplyEnterpriseRepository.findByIdEnterprise(idEnterprise);
+
+        List<Integer> supplierList = supplyEnterprise.stream()
+                .map(SupplyEnterprise::getIdSupplier)
+                .toList();
+
+        System.out.println("IDs fournisseurs : " + supplierList);
+
+        List<Supplier> results = this.repository.findAllById(supplierList);
+        System.out.println("Fournisseurs retournés : " + results.size());
+
+        return results;
     }
 }
