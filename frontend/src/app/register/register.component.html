@@ -1,9 +1,22 @@
 <div class="container mt-5">
-    <div class="card p-4 shadow-lg">
-      <h2 class="text-center text-primary mb-4">Créer votre entreprise et compte admin</h2>
-  
-      <form (ngSubmit)="onSubmit()">
-        <!-- ENTREPRISE -->
+  <div class="card p-4 shadow-lg">
+    <h2 class="text-center text-primary mb-4">Créer un compte</h2>
+
+    <form (ngSubmit)="onSubmit()">
+      <!-- CHOIX DU RÔLE -->
+      <h5 class="text-secondary">Type de compte</h5>
+      <div class="mb-3">
+        <label>Rôle</label>
+        <select class="form-control" [(ngModel)]="user.role" name="role" required>
+          <option value="">-- Sélectionner --</option>
+          <option value="admin">Administrateur d'entreprise</option>
+          <option value="supplier">Fournisseur</option>
+        </select>
+      </div>
+
+      <!-- ENTREPRISE (uniquement si admin) -->
+      <div *ngIf="user.role === 'admin'">
+        <hr>
         <h5 class="text-secondary">Informations sur l'entreprise</h5>
         <div class="mb-3">
           <label>Nom</label>
@@ -21,42 +34,41 @@
           <label>Adresse</label>
           <input type="text" class="form-control" [(ngModel)]="enterprise.address" name="enterpriseAddress" required>
         </div>
-  
-        <hr>
-  
-        <!-- UTILISATEUR ADMIN -->
-        <h5 class="text-secondary">Informations sur l'administrateur</h5>
-        <div class="mb-3">
-          <label>Prénom</label>
-          <input type="text" class="form-control" [(ngModel)]="user.firstname" name="firstname" required>
-        </div>
-        <div class="mb-3">
-          <label>Nom</label>
-          <input type="text" class="form-control" [(ngModel)]="user.lastname" name="lastname" required>
-        </div>
-        <div class="mb-3">
-          <label>Email</label>
-          <input type="email" class="form-control" [(ngModel)]="user.email" name="userEmail" required>
-        </div>
-        <div class="mb-3">
-          <label>Téléphone</label>
-          <input type="text" class="form-control" [(ngModel)]="user.phoneNumber" name="userPhone" required>
-        </div>
-        <div class="mb-3">
-          <label>Mot de passe</label>
-          <input type="password" class="form-control" [(ngModel)]="user.password" name="password" required>
-        </div>
-        <div class="mb-3">
-          <label>Confirmation du mot de passe</label>
-          <input type="password" class="form-control" [(ngModel)]="confirmPassword" name="confirmPassword" required>
-        </div>
-  
-        <button type="submit" class="btn btn-primary w-100">Créer entreprise et admin</button>
-      </form>
-  
-      <div class="text-center mt-3">
-        <a routerLink="/login">Déjà inscrit ? Connectez-vous ici</a>
       </div>
+
+      <!-- INFOS UTILISATEUR -->
+      <hr>
+      <h5 class="text-secondary">Informations utilisateur</h5>
+      <div class="mb-3">
+        <label>Prénom</label>
+        <input type="text" class="form-control" [(ngModel)]="user.firstname" name="firstname" required>
+      </div>
+      <div class="mb-3">
+        <label>Nom</label>
+        <input type="text" class="form-control" [(ngModel)]="user.lastname" name="lastname" required>
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" [(ngModel)]="user.email" name="userEmail" required>
+      </div>
+      <div class="mb-3">
+        <label>Téléphone</label>
+        <input type="text" class="form-control" [(ngModel)]="user.phoneNumber" name="userPhone" required>
+      </div>
+      <div class="mb-3">
+        <label>Mot de passe</label>
+        <input type="password" class="form-control" [(ngModel)]="user.password" name="password" required>
+      </div>
+      <div class="mb-3">
+        <label>Confirmation du mot de passe</label>
+        <input type="password" class="form-control" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Créer le compte</button>
+    </form>
+
+    <div class="text-center mt-3">
+      <a routerLink="/login">Déjà inscrit ? Connectez-vous ici</a>
     </div>
   </div>
-  
+</div>

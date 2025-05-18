@@ -1,4 +1,12 @@
 <div class="container my-5">
+
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-outline-secondary" (click)="goFavsPage()">
+      Voir favoris
+      <i class="bi bi-star-fill text-warning me-1"></i>
+    </button>
+  </div>
+
   <div class="row mb-4">
     <div class="col-md-6 offset-md-3">
       <input type="text"
@@ -10,58 +18,26 @@
   </div>
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
-
-    <!-- Carte "Ajouter un Fournisseur" -->
-    <div class="col-md-4">
-      <div class="card h-100 p-4 shadow-sm" *ngIf="!isAdding" (click)="isAdding = true" style="cursor: pointer;">
-        <div class="d-flex flex-column align-items-center justify-content-center h-100">
-          <div class="bg-light d-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 70px; height: 70px;">
-            <span class="fs-3 text-secondary">+</span>
-          </div>
-          <h5 class="text-muted mb-3">Ajouter un Fournisseur</h5>
-        </div>
-      </div>
-
-      <!-- Formulaire d'ajout -->
-      <div class="card p-3 bg-light" *ngIf="isAdding">
-        <input [(ngModel)]="newSupplier.name" class="form-control mb-2" placeholder="Nom du fournisseur">
-        <input [(ngModel)]="newSupplier.email" class="form-control mb-2" placeholder="Email">
-        <input [(ngModel)]="newSupplier.phoneNumber" class="form-control mb-2" placeholder="Téléphone">
-        <div class="d-flex justify-content-between">
-          <button class="btn btn-success btn-sm" (click)="addSupplier()">Ajouter</button>
-          <button class="btn btn-secondary btn-sm" (click)="isAdding = false">Annuler</button>
-        </div>
-      </div>
-    </div>
-
     <!-- Cartes fournisseurs -->
     <div class="col" *ngFor="let supplier of filteredSuppliers">
       <div class="card h-100 bg-dark text-white shadow-sm p-3 d-flex flex-column justify-content-between"
            style="min-height: 200px;">
         
         <!-- Affichage normal -->
-        <div *ngIf="editingSupplierId !== supplier.id" class="d-flex flex-column justify-content-between h-100">
+        <div class="d-flex flex-column justify-content-between h-100">
           <div>
             <div class="fw-bold text-uppercase">Nom : {{ supplier.name }}</div>
             <div>Email : {{ supplier.email }}</div>
             <div>Téléphone : {{ supplier.phoneNumber }}</div>
-          </div>
-          <div class="text-end mt-3">
-            <button class="btn btn-outline-light btn-sm" (click)="editSupplier(supplier)">Modifier</button>
-          </div>
-        </div>
-
-        <!-- Mode édition -->
-        <div *ngIf="editingSupplierId === supplier.id" class="text-dark bg-white p-2 rounded">
-          <input [(ngModel)]="supplier.name" class="form-control mb-2" placeholder="Nom du fournisseur" />
-          <input [(ngModel)]="supplier.email" class="form-control mb-2" placeholder="Email" />
-          <input [(ngModel)]="supplier.phoneNumber" class="form-control mb-2" placeholder="Téléphone" />
-          <div class="d-flex justify-content-between">
-            <button class="btn btn-success btn-sm" (click)="saveSupplier(supplier)">Enregistrer</button>
-            <button class="btn btn-secondary btn-sm" (click)="cancelEdit()">Annuler</button>
+            <button class="btn position-absolute end-0 bottom-0 m-2 p-0 border-0 bg-transparent"
+            (click)="toggleFavorite(supplier)">
+              <i class="bi"
+                [ngClass]="isFavorite(supplier) ? 'bi-star-fill text-warning' : 'bi-star text-white'"
+                style="font-size: 1.5rem;">
+              </i>
+          </button>
           </div>
         </div>
-
       </div>
     </div>
   </div>

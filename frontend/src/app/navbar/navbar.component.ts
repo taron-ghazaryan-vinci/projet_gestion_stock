@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
+  role: string | null = localStorage.getItem("role") ||sessionStorage.getItem("role");
+
   constructor (public authService : AuthService, private router : Router){}
 
 

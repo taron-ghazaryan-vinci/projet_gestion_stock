@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supplier',
@@ -7,29 +8,42 @@ import { Component } from '@angular/core';
   styleUrl: './supplier.component.css'
 })
 export class SupplierComponent {
+
   suppliers: any[] = [];
   filteredSuppliers: any[] = [];
   searchTerm: string = '';
-  editingSupplierId: number | null = null;
-  isAdding: boolean = false;
+  favoriteSupplierIds: number[] = []; 
+  idEnterprise: number = 0;
 
   newSupplier = {
     name: '',
     email: '',
     phoneNumber: ''
   };
+  router: any;
+
+  public constructor(router : Router){
+    this.router = router;
+  }
 
   ngOnInit(): void {
-    const id = this.getEnterpriseId();
-    if (!id) return;
+    this.idEnterprise = this.getEnterpriseId();
+    if (!this.idEnterprise) return;
 
-    fetch(`http://localhost:8086/suppliers/getAllSuppliers/${id}`)
+    fetch(`http://localhost:8082/users/getAllSuppliers`)
       .then(res => res.json())
       .then(data => {
         this.suppliers = data;
         this.filteredSuppliers = data;
       })
       .catch(err => console.error('Erreur de récupération des fournisseurs', err));
+
+    fetch(`http://localhost:8082/users/favoriteSuppliers/${this.idEnterprise}`)
+      .then(res => res.json())
+      .then(data => {
+        this.favoriteSupplierIds = data.map((supplier: any) => supplier.id);
+      })
+      .catch(err => console.error('Erreur de récupération des favoris', err));
   }
 
   getEnterpriseId(): number {
@@ -46,57 +60,42 @@ export class SupplierComponent {
     );
   }
 
-  editSupplier(supplier: any) {
-    this.editingSupplierId = supplier.id;
+  isFavorite(supplier: any): boolean {
+    return this.favoriteSupplierIds.includes(supplier.id);
   }
 
-  cancelEdit() {
-    this.editingSupplierId = null;
+  toggleFavorite(supplier: any) {
+  const idEnterprise = this.idEnterprise;
+  const idSupplier = supplier.id;
+
+  const isAlreadyFavorite = this.favoriteSupplierIds.includes(idSupplier);
+
+  if (isAlreadyFavorite) {
+    fetch(`http://localhost:8082/users/favoriteSuppliers/deleteOne`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ idEnterprise, idSupplier })
+    })
+      .then(() => {
+        this.favoriteSupplierIds = this.favoriteSupplierIds.filter(id => id !== idSupplier);
+      })
+      .catch(err => console.error("Erreur suppression favori", err));
+  } else {
+    fetch('http://localhost:8082/users/favoriteSuppliers/addOne', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ idEnterprise, idSupplier })
+    })
+      .then(() => {
+        this.favoriteSupplierIds.push(idSupplier);
+      })
+      .catch(err => console.error("Erreur ajout favori", err));
   }
+}
 
-  async addSupplier() {
-    const enterpriseId = this.getEnterpriseId();
-    const supplierToCreate = {
-      ...this.newSupplier,
-      idEnterprise: enterpriseId
-    };
+goFavsPage(){
+  this.router.navigate(["/favorite-suppliers"])
+}
 
-    try {
-      const res = await fetch('http://localhost:8086/suppliers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(supplierToCreate)
-      });
 
-      if (!res.ok) throw new Error(await res.text());
-
-      const created = await res.json();
-      this.suppliers.push(created);
-      this.filteredSuppliers = [...this.suppliers];
-      this.newSupplier = { name: '', email: '', phoneNumber: '' };
-      this.isAdding = false;
-    } catch (error: any) {
-      alert("Erreur d'ajout : " + error.message);
-    }
-  }
-
-  async saveSupplier(supplier: any) {
-    try {
-      const res = await fetch(`http://localhost:8086/suppliers/${supplier.id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(supplier)
-      });
-
-      if (!res.ok) throw new Error('Erreur lors de la mise à jour');
-
-      const updated = await res.json();
-      const index = this.suppliers.findIndex(s => s.id === updated.id);
-      if (index !== -1) this.suppliers[index] = updated;
-      this.filteredSuppliers = [...this.suppliers];
-      this.editingSupplierId = null;
-    } catch (error: any) {
-      alert(error.message);
-    }
-  }
 }

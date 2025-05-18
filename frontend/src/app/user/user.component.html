@@ -44,6 +44,11 @@
         
         <!-- Affichage normal -->
         <div *ngIf="editingUserId !== user.id" class="d-flex flex-column justify-content-between h-100">
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-outline-danger btn-sm" (click)="deleteUser(user)">
+              <i class="bi bi-x-circle-fill"></i>
+            </button>
+          </div>
           <div class="d-flex align-items-center mb-3">
             <img 
               [src]="user.photoUrl ? 'http://localhost:8082' + user.photoUrl : 'assets/default.jpg'" 
@@ -51,6 +56,7 @@
               class="rounded-circle me-3"
               style="width: 50px; height: 50px; object-fit: cover;" />
             <div>
+              
               <div class="fw-bold text-uppercase">Nom : {{ user.lastname }}</div>
               <div>Prénom : {{ user.firstname }}</div>
               <div>Email : {{ user.email }}</div>

@@ -35,9 +35,9 @@ export class LoginComponent {
     
       console.log('Connexion réussie, token:', token);
       if(this.rememberMe)
-        this.authService.loginLocal(token, user.idEnterprise);
+        this.authService.loginLocal(token, user);
       else
-        this.authService.loginSession(token, user.idEnterprise);
+        this.authService.loginSession(token, user);
       this.router.navigate(["/"]);
     } catch (error) {
       console.error('Erreur de connexion:', error);

@@ -12,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './user/user.component';
 import { SupplierComponent } from './supplier/supplier.component';
+import { SupplierFavoriteComponent } from './supplier-favorite/supplier-favorite.component';
+import { StockComponent } from './stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { SupplierComponent } from './supplier/supplier.component';
     HomepageComponent,
     UserComponent,
     SupplierComponent,
+    SupplierFavoriteComponent,
+    StockComponent,
   ],
   imports: [
     BrowserModule,

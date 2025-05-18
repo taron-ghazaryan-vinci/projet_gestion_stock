@@ -11,18 +11,26 @@ export class AuthService {
     return !!localStorage.getItem('token') || !!sessionStorage.getItem('token');
   }
 
-  loginLocal(token: string, idEnterprise: number): void {
+  loginLocal(token: string, user: any): void {
     localStorage.setItem('token', token);
-    localStorage.setItem('idEnterprise', idEnterprise.toString());
+    if(user.role!=="supplier"){
+      localStorage.setItem('idEnterprise', user.idEnterprise.toString());
+    }
+    localStorage.setItem('role', user.role.toString());
+    
+
   }
 
   logoutLocal(): void {
     localStorage.removeItem('token');
   }
 
-  loginSession(token: string, idEnterprise: number): void {
+  loginSession(token: string, user: any): void {
     sessionStorage.setItem('token', token);
-    sessionStorage.setItem('idEnterprise', idEnterprise.toString());
+    if(user.role!=="supplier"){
+      sessionStorage.setItem('idEnterprise', user.idEnterprise.toString());
+    }
+    sessionStorage.setItem('role', user.role.toString());
   }
 
   logoutSession(): void {

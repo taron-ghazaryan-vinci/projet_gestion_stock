@@ -39,6 +39,16 @@ export class UserComponent implements OnInit {
       .catch(err => console.error('Erreur de fetch', err));
   }
 
+  deleteUser(user : any){
+    fetch(`http://localhost:8082/users/${user.id}`,{
+      method : 'DELETE'
+    }).then(res => {
+      if (!res.ok) throw new Error("Erreur lors de la suppression");
+      this.users = this.users.filter(u => u.id !== user.id);
+      this.filteredUsers = this.filteredUsers.filter(u => u.id !== user.id);
+    }).catch(err => alert(err.message))
+  }
+
   filterUsers() {
   const term = this.searchTerm.toLowerCase();
   this.filteredUsers = this.users.filter(user =>
@@ -51,10 +61,10 @@ export class UserComponent implements OnInit {
     this.editingUserId = user.id;
   }
 
-getEnterpriseId(): number {
-  const id = localStorage.getItem('idEnterprise') || sessionStorage.getItem('idEnterprise');
-  return id ? parseInt(id, 10) : 0;
-}
+  getEnterpriseId(): number {
+    const id = localStorage.getItem('idEnterprise') || sessionStorage.getItem('idEnterprise');
+    return id ? parseInt(id, 10) : 0;
+  }
 
 
   async addUser() {
@@ -95,30 +105,30 @@ getEnterpriseId(): number {
   }
 
   saveUser(user: any) {
-  const formData = new FormData();
-  formData.append("user", JSON.stringify(user));
-  if (this.photoFile) {
-    formData.append("photo", this.photoFile);
-  }
+    const formData = new FormData();
+    formData.append("user", JSON.stringify(user));
+    if (this.photoFile) {
+      formData.append("photo", this.photoFile);
+    }
 
-  fetch(`http://localhost:8082/users/updateWithPhoto`, {
-    method: 'PATCH',
-    body: formData
-  })
-    .then(response => {
-      if (!response.ok) throw new Error('Erreur lors de la mise à jour');
-      console.log('Utilisateur mis à jour avec succès');
-      this.editingUserId = null;
-      this.photoFile = null;
-      return response.json();
+    fetch(`http://localhost:8082/users/updateWithPhoto`, {
+      method: 'PATCH',
+      body: formData
     })
-    .then(updatedUser => {
-      // Mets à jour l'utilisateur dans le tableau
-      const index = this.users.findIndex(u => u.id === updatedUser.id);
-      if (index !== -1) this.users[index] = updatedUser;
-    })
-    .catch(error => alert(error.message));
-}
+      .then(response => {
+        if (!response.ok) throw new Error('Erreur lors de la mise à jour');
+        console.log('Utilisateur mis à jour avec succès');
+        this.editingUserId = null;
+        this.photoFile = null;
+        return response.json();
+      })
+      .then(updatedUser => {
+        // Mets à jour l'utilisateur dans le tableau
+        const index = this.users.findIndex(u => u.id === updatedUser.id);
+        if (index !== -1) this.users[index] = updatedUser;
+      })
+      .catch(error => alert(error.message));
+  }
 
 
 }
