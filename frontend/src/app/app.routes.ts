@@ -5,12 +5,13 @@ import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { SupplierFavoriteComponent } from './supplier-favorite/supplier-favorite.component';
-
+import { StockComponent } from './stock/stock.component';
 export const routes: Routes = [
     { path: '', component: HomepageComponent },
     { path: "login", component : LoginComponent},
     { path: "register", component : RegisterComponent },
     { path: "user", component : UserComponent},
     { path: "supplier", component : SupplierComponent},
-    { path:"favorite-suppliers", component : SupplierFavoriteComponent},
+    { path: "favorite-suppliers", component : SupplierFavoriteComponent},
+    { path: "stock", component : StockComponent}
 ]

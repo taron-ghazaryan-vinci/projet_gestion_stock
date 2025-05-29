@@ -12,7 +12,7 @@
             <a class="nav-link active fs-5 text" routerLink="/commandes">Commandes</a>
           </li>
           <li class="nav-item" *ngIf="authService.isLoggedIn()">
-            <a class="nav-link active fs-5 text" routerLink="/stocks">Stocks</a>
+            <a class="nav-link active fs-5 text" routerLink="/stock">Stocks</a>
           </li>
           <li class="nav-item" *ngIf="authService.isLoggedIn() && role === 'admin'">
             <a class="nav-link active fs-5 text" routerLink="/supplier">Fournisseurs</a>

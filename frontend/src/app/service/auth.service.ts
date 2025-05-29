@@ -13,11 +13,13 @@ export class AuthService {
 
   loginLocal(token: string, user: any): void {
     localStorage.setItem('token', token);
+    localStorage.setItem('idUser', user.id);
+
     if(user.role!=="supplier"){
       localStorage.setItem('idEnterprise', user.idEnterprise.toString());
+    }else{
+      localStorage.setItem('role', user.role.toString());
     }
-    localStorage.setItem('role', user.role.toString());
-    
 
   }
 
@@ -27,10 +29,13 @@ export class AuthService {
 
   loginSession(token: string, user: any): void {
     sessionStorage.setItem('token', token);
+    sessionStorage.setItem('idUser', user.id);
     if(user.role!=="supplier"){
       sessionStorage.setItem('idEnterprise', user.idEnterprise.toString());
     }
-    sessionStorage.setItem('role', user.role.toString());
+    else{
+      sessionStorage.setItem('role', user.role.toString());
+    }
   }
 
   logoutSession(): void {
