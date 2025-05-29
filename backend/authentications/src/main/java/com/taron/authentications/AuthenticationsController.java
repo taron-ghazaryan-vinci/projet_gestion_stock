@@ -6,6 +6,7 @@ import com.taron.authentications.models.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.Collections;
 
 
@@ -44,6 +45,7 @@ public class AuthenticationsController {
         return ResponseEntity.ok(createdUser);
     }
 
+
     private boolean isNullOrEmpty(String value) {
         return value == null || value.trim().isEmpty();
     }
@@ -53,5 +55,6 @@ public class AuthenticationsController {
         String token = service.loginAndReturnToken(login.getEmail(), login.getPassword());
         return ResponseEntity.ok(Collections.singletonMap("token", token));
     }
+
 
 }

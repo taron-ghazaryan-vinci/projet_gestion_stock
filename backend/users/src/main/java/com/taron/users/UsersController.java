@@ -1,6 +1,7 @@
 package com.taron.users;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.taron.users.models.FavoriteSupplier;
 import com.taron.users.models.User;
 import jakarta.websocket.server.PathParam;
 import org.springframework.http.MediaType;
@@ -82,6 +83,28 @@ public class UsersController {
         return ResponseEntity.ok(updated);
     }
 
+
+    @GetMapping("/getAllSuppliers")
+    List<User> getAllSuppliers(){
+        return this.service.getAllSuppliers();
+    }
+
+    @GetMapping("/favoriteSuppliers/{idEnterprise}")
+    public List<User> getFavoriteSuppliers(@PathVariable Integer idEnterprise) {
+        return service.getFavoriteSuppliers(idEnterprise);
+    }
+
+    @PostMapping("/favoriteSuppliers/addOne")
+    public ResponseEntity<?> addFavoriteSupplier(@RequestBody FavoriteSupplier fav) {
+        service.addFavorite(fav.getIdEnterprise(), fav.getIdSupplier());
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/favoriteSuppliers/deleteOne")
+    public ResponseEntity<?> removeFavoriteSupplier(@RequestBody FavoriteSupplier fav) {
+        service.removeFavorite(fav.getIdEnterprise(), fav.getIdSupplier());
+        return ResponseEntity.noContent().build();
+    }
 
 
 

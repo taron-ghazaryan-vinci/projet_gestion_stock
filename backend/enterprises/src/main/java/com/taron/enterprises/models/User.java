@@ -1,4 +1,4 @@
-package com.taron.enterprises.models;
+package com.taron.authentications.models;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -35,10 +35,10 @@ public class User {
     @Column(name = "role", nullable = false, length = 50)
     private String role;
 
-    @Column(name = "id_entreprise")
-    private Integer idEnterprise;
+    @Column(name = "id_entreprise", nullable = true)
+    private int idEnterprise;
 
-    @Column(name = "photo_url")
+    @Column(name = "photo_url", nullable = true)
     private String photoUrl;
 
 }

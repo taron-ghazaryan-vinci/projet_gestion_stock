@@ -35,10 +35,10 @@ public class User {
     @Column(name = "role", nullable = false, length = 50)
     private String role;
 
-    @Column(name = "id_entreprise")
+    @Column(name = "id_enterprise", nullable = true)
     private Integer idEnterprise;
 
-    @Column(name = "photo_url")
+    @Column(name = "photo_url", nullable = true)
     private String photoUrl;
 
 }

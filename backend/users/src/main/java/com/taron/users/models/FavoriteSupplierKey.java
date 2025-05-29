@@ -1,4 +1,8 @@
-package com.taron.users;
+package com.taron.users.models;
 
-public class FavoriteSupplierKey {
+import java.io.Serializable;
+
+public class FavoriteSupplierKey implements Serializable {
+    private Integer idEnterprise;
+    private Integer idSupplier;
 }

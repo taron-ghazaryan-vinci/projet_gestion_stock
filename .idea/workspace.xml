@@ -5,24 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/models/SupplyEnterprise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/models/SupplyEnterpriseKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/repositories/SupplyEnterpriseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/models/Stock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/repositories/StockProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/SuppliersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/SuppliersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/SuppliersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/SuppliersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/repositories/SuppliersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/suppliers/src/main/java/com/taron/suppliers/repositories/SuppliersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/models/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/repositories/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/repositories/ProductsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/models/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/models/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/repositories/StocksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/repositories/StocksRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplierKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplierKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/FavoriteSupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/FavoriteSupplierRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/UsersRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/create-user/create-user.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/create-user/create-user.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/create-user/create-user.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/create-user/create-user.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/login/login.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/user/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/user/user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +48,7 @@
       <list>
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -57,46 +72,54 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.All in enterprises.executor": "Run",
-    "HTTP Request.authentications | Login an user.executor": "Run",
-    "HTTP Request.authentications | Register new user.executor": "Run",
-    "HTTP Request.enterprises | Create an enterprise.executor": "Run",
-    "HTTP Request.enterprises | Get an entrerprise by ID.executor": "Run",
-    "HTTP Request.enterprises | Update Enterprise (PATCH).executor": "Run",
-    "HTTP Request.users | Create new user.executor": "Run",
-    "HTTP Request.users | Delete an user.executor": "Run",
-    "HTTP Request.users | Get user by email.executor": "Run",
-    "HTTP Request.users | Get user by id.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AuthenticationsApplication.executor": "Run",
-    "Spring Boot.EnterprisesApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.SuppliersApplication.executor": "Run",
-    "Spring Boot.UsersApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.All in enterprises.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.authentications | Login an user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.authentications | Register new user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Create an enterprise.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Get an entrerprise by ID.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Update Enterprise (PATCH).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Create new user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Delete an user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Get user by email.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Get user by id.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthenticationsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EnterprisesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrdersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProductsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StocksApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SuppliersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.taron.suppliers.models" />
       <recent name="com.taron.authentications.models" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -236,6 +259,22 @@
       <workItem from="1747225944384" duration="1020000" />
       <workItem from="1747226975769" duration="1041000" />
       <workItem from="1747228175624" duration="13468000" />
+      <workItem from="1747299127018" duration="16837000" />
+      <workItem from="1747395046204" duration="8980000" />
+      <workItem from="1747480037749" duration="11439000" />
+      <workItem from="1747566663875" duration="5543000" />
+      <workItem from="1747743574016" duration="4868000" />
+      <workItem from="1747752702465" duration="3565000" />
+      <workItem from="1747823302263" duration="7765000" />
+      <workItem from="1747910841209" duration="8532000" />
+      <workItem from="1747923649013" duration="4918000" />
+      <workItem from="1747938383847" duration="1917000" />
+      <workItem from="1747997696667" duration="1020000" />
+      <workItem from="1747999362159" duration="2482000" />
+      <workItem from="1748096511623" duration="6581000" />
+      <workItem from="1748358956451" duration="3699000" />
+      <workItem from="1748429969334" duration="622000" />
+      <workItem from="1748519085581" duration="6162000" />
     </task>
     <servers />
   </component>

@@ -5,8 +5,11 @@ import lombok.*;
 
 @Entity
 @Table(name = "stocks", schema = "projet_gestion_stock")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Stock {
 
     @Id
@@ -14,12 +17,15 @@ public class Stock {
     @Column(name = "id_stock")
     private int id;
 
-    @Column(name = "product", nullable = false)
-    private int productId;
+    @Column(name = "id_product", nullable = false)
+    private Integer idProduct;
 
-    @Column(name = "id_enterprise", nullable = false)
-    private int enterpriseId;
+    @Column(name = "owner_type", nullable = false)
+    private String ownerType; // "supplier" ou "enterprise"
 
-    @Column(name = "address", nullable = false, length = 50)
-    private String address;
+    @Column(name = "id_owner", nullable = false)
+    private Integer idOwner;
+
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 }
