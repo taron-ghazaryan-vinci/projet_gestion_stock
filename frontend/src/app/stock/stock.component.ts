@@ -143,6 +143,7 @@ export class StockComponent {
   startEdit(product: any): void {
     this.editingProductId = product.id;
     this.editProductData = { ...product };
+    console.log(this.editProductData);
   }
 
   cancelEdit(): void {
@@ -161,20 +162,44 @@ export class StockComponent {
       return res.json();
     })
     .then((updatedProduct) => {
-      // Met à jour dans this.products
+      // Met à jour les infos du produit localement
       const index = this.products.findIndex(p => p.id === updatedProduct.id);
       if (index !== -1) {
-        const oldQuantity = this.products[index].quantity;
-        this.products[index] = { ...updatedProduct, quantity: oldQuantity };
+        this.products[index] = {
+          ...updatedProduct,
+          quantity: this.editProductData.quantity // Temporairement, la nouvelle quantité
+        };
       }
 
-      // Recalcule filteredStocks avec filtre actif
-      this.filteredStocks = this.products.filter(p => p.active);
+      // Trouve l'idStock lié à ce produit
+      const stock = this.stocks.find(s => s.idProduct === updatedProduct.id);
+      if (!stock) {
+        throw new Error("Stock introuvable pour ce produit.");
+      }
 
-      // Reset formulaire
-      this.cancelEdit();
+      // Met à jour la quantité via le backend
+      return fetch(`http://localhost:8087/stocks/updateStock/${stock.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity: this.editProductData.quantity })
+      })
+      .then(res => {
+        if (!res.ok) throw new Error("Erreur lors de la mise à jour du stock");
+        return res.json();
+      })
+      .then(updatedStock => {
+        // Met à jour la quantité localement
+        stock.quantity = updatedStock.quantity;
+        this.products[index].quantity = updatedStock.quantity;
+
+        // Met à jour les stocks filtrés
+        this.filteredStocks = this.products.filter(p => p.active);
+
+        this.cancelEdit();
+      });
     })
     .catch(err => alert(err.message));
-}
+  }
+
 
 }

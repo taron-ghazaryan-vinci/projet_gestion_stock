@@ -1,42 +1,31 @@
 <div class="container my-5">
-
-  <div class="d-flex justify-content-end">
-    <button class="btn btn-outline-secondary" (click)="goFavsPage()">
-      Voir favoris
-      <i class="bi bi-star-fill text-warning me-1"></i>
-    </button>
-  </div>
-
   <div class="row mb-4">
     <div class="col-md-6 offset-md-3">
       <input type="text"
-            class="form-control"
-            placeholder="Rechercher un fournisseur..."
-            [(ngModel)]="searchTerm"
-            (input)="filterSuppliers()" />
+             class="form-control"
+             placeholder="Rechercher un fournisseur..."
+             [(ngModel)]="searchTerm"
+             (input)="filterSuppliers()" />
+    </div>
+    <div class="col-md-3 text-end">
+      <button class="btn btn-outline-secondary" (click)="goFavsPage()">Voir favoris ⭐</button>
     </div>
   </div>
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <!-- Cartes fournisseurs -->
     <div class="col" *ngFor="let supplier of filteredSuppliers">
-      <div class="card h-100 bg-dark text-white shadow-sm p-3 d-flex flex-column justify-content-between"
-           style="min-height: 200px;">
-        
-        <!-- Affichage normal -->
-        <div class="d-flex flex-column justify-content-between h-100">
-          <div>
-            <div class="fw-bold text-uppercase">Nom : {{ supplier.name }}</div>
-            <div>Email : {{ supplier.email }}</div>
-            <div>Téléphone : {{ supplier.phoneNumber }}</div>
-            <button class="btn position-absolute end-0 bottom-0 m-2 p-0 border-0 bg-transparent"
-            (click)="toggleFavorite(supplier)">
-              <i class="bi"
-                [ngClass]="isFavorite(supplier) ? 'bi-star-fill text-warning' : 'bi-star text-white'"
-                style="font-size: 1.5rem;">
-              </i>
-          </button>
-          </div>
+      <div class="card h-100 bg-dark text-white shadow-sm p-3 d-flex flex-column justify-content-between">
+        <div>
+          <h5><strong>NOM :</strong> {{ supplier.name }}</h5>
+          <p>Email : {{ supplier.email }}</p>
+          <p>Téléphone : {{ supplier.phoneNumber }}</p>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-end">
+          <i class="bi bi-star-fill text-warning" *ngIf="isFavorite(supplier)" (click)="toggleFavorite(supplier)" style="cursor: pointer;"></i>
+          <i class="bi bi-star text-white" *ngIf="!isFavorite(supplier)" (click)="toggleFavorite(supplier)" style="cursor: pointer;"></i>
+
+          <button class="btn btn-outline-light btn-sm" (click)="voirProduits(supplier.id)">Voir produits</button>
         </div>
       </div>
     </div>

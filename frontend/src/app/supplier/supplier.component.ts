@@ -1,30 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supplier',
   standalone: false,
   templateUrl: './supplier.component.html',
-  styleUrl: './supplier.component.css'
+  styleUrls: ['./supplier.component.css']
 })
-export class SupplierComponent {
-
+export class SupplierComponent implements OnInit {
   suppliers: any[] = [];
   filteredSuppliers: any[] = [];
   searchTerm: string = '';
-  favoriteSupplierIds: number[] = []; 
+  favoriteSupplierIds: number[] = [];
   idEnterprise: number = 0;
 
-  newSupplier = {
-    name: '',
-    email: '',
-    phoneNumber: ''
-  };
-  router: any;
-
-  public constructor(router : Router){
-    this.router = router;
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.idEnterprise = this.getEnterpriseId();
@@ -65,37 +55,35 @@ export class SupplierComponent {
   }
 
   toggleFavorite(supplier: any) {
-  const idEnterprise = this.idEnterprise;
-  const idSupplier = supplier.id;
+    const idSupplier = supplier.id;
+    const isAlreadyFavorite = this.favoriteSupplierIds.includes(idSupplier);
 
-  const isAlreadyFavorite = this.favoriteSupplierIds.includes(idSupplier);
+    const url = isAlreadyFavorite
+      ? `http://localhost:8082/users/favoriteSuppliers/deleteOne`
+      : `http://localhost:8082/users/favoriteSuppliers/addOne`;
 
-  if (isAlreadyFavorite) {
-    fetch(`http://localhost:8082/users/favoriteSuppliers/deleteOne`, {
-      method: 'DELETE',
+    const method = isAlreadyFavorite ? 'DELETE' : 'POST';
+
+    fetch(url, {
+      method,
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ idEnterprise, idSupplier })
+      body: JSON.stringify({ idEnterprise: this.idEnterprise, idSupplier })
     })
       .then(() => {
-        this.favoriteSupplierIds = this.favoriteSupplierIds.filter(id => id !== idSupplier);
+        if (isAlreadyFavorite) {
+          this.favoriteSupplierIds = this.favoriteSupplierIds.filter(id => id !== idSupplier);
+        } else {
+          this.favoriteSupplierIds.push(idSupplier);
+        }
       })
-      .catch(err => console.error("Erreur suppression favori", err));
-  } else {
-    fetch('http://localhost:8082/users/favoriteSuppliers/addOne', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ idEnterprise, idSupplier })
-    })
-      .then(() => {
-        this.favoriteSupplierIds.push(idSupplier);
-      })
-      .catch(err => console.error("Erreur ajout favori", err));
+      .catch(err => console.error("Erreur lors du changement de favori", err));
   }
-}
 
-goFavsPage(){
-  this.router.navigate(["/favorite-suppliers"])
-}
+  goFavsPage() {
+    this.router.navigate(["/favorite-suppliers"]);
+  }
 
-
+  voirProduits(idFournisseur: number) {
+    this.router.navigate(['/produits-fournisseur', idFournisseur]);
+  }
 }

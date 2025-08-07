@@ -14,6 +14,7 @@ import { UserComponent } from './user/user.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { SupplierFavoriteComponent } from './supplier-favorite/supplier-favorite.component';
 import { StockComponent } from './stock/stock.component';
+import { ProduitsFournisseurComponent } from './produits-fournisseur/produits-fournisseur.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { StockComponent } from './stock/stock.component';
     SupplierComponent,
     SupplierFavoriteComponent,
     StockComponent,
+    ProduitsFournisseurComponent
   ],
   imports: [
     BrowserModule,

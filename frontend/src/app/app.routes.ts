@@ -6,6 +6,7 @@ import { UserComponent } from './user/user.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { SupplierFavoriteComponent } from './supplier-favorite/supplier-favorite.component';
 import { StockComponent } from './stock/stock.component';
+import { ProduitsFournisseurComponent } from './produits-fournisseur/produits-fournisseur.component';
 export const routes: Routes = [
     { path: '', component: HomepageComponent },
     { path: "login", component : LoginComponent},
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: "user", component : UserComponent},
     { path: "supplier", component : SupplierComponent},
     { path: "favorite-suppliers", component : SupplierFavoriteComponent},
-    { path: "stock", component : StockComponent}
+    { path: "stock", component : StockComponent},
+    { path: 'produits-fournisseur/:id', component: ProduitsFournisseurComponent },
 ]

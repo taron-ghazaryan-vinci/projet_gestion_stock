@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supplier-favorite',
@@ -11,6 +12,8 @@ export class SupplierFavoriteComponent {
   filteredSuppliers: any[] = [];
   searchTerm: string = '';
   idEnterprise: number = 0;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.idEnterprise = this.getEnterpriseId();
@@ -54,5 +57,10 @@ export class SupplierFavoriteComponent {
       this.suppliers = this.suppliers.filter(s => s.id !== supplierId);
       this.filteredSuppliers = this.filteredSuppliers.filter(s => s.id !== supplierId);
     }).catch(err => alert(err.message));
+  }
+
+
+  voirProduits(idFournisseur: number) {
+    this.router.navigate(['/produits-fournisseur', idFournisseur]);
   }
 }

@@ -30,6 +30,9 @@
             <div>Email : {{ supplier.email }}</div>
             <div>Téléphone : {{ supplier.phoneNumber }}</div>
           </div>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-outline-light btn-sm" (click)="voirProduits(supplier.id)">Voir produits</button>
+          </div>
         </div>
       </div>
     </div>
