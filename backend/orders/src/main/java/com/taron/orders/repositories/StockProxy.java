@@ -1,2 +1,9 @@
-package com.taron.orders.repositories;public class StockProxy {
+package com.taron.orders.repositories;
+
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name = "stocks", path = "/stocks")
+public interface StockProxy {
+
 }

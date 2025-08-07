@@ -2,6 +2,7 @@ package com.taron.enterprises;
 
 import com.taron.enterprises.models.Enterprise;
 import com.taron.enterprises.repositories.EnterprisesRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

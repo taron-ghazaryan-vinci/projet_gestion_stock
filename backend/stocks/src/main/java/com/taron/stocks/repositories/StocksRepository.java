@@ -16,4 +16,12 @@ public interface StocksRepository extends JpaRepository<Stock, Integer> {
     List<Stock> findStocksBySupplierId(@Param("supplierId") int supplierId);
 
 
+    @Query(value = "SELECT s.* FROM projet_gestion_stock.stocks s " +
+            "WHERE s.id_owner = :idSupplier AND s.id_product = :idProduct AND s.owner_type = 'supplier'",
+            nativeQuery = true)
+    Stock findStockByIdProductAndIdOwnerAndOwnerType(@Param("idSupplier") int idSupplier,
+                                                     @Param("idProduct") int idProduct,
+                                                     @Param("ownerType") String ownerType);
+
+
 }

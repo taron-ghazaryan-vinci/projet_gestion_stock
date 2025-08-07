@@ -5,38 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/models/Stock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/repositories/StockProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/models/OrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/models/OrderDetailKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/models/Stock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/repositories/OrderDetailsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/repositories/StockProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/AuthenticationsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/authentications/src/main/java/com/taron/authentications/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/ProductsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/repositories/ProductsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/src/main/java/com/taron/products/repositories/ProductsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/EnterprisesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/EnterprisesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/EnterprisesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/enterprises/src/main/java/com/taron/enterprises/EnterprisesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/OrdersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/models/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/models/Stock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/repositories/StocksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/repositories/StocksRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplierKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/FavoriteSupplierKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/FavoriteSupplierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/FavoriteSupplierRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/users/src/main/java/com/taron/users/repositories/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/navbar/navbar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/supplier-favorite/supplier-favorite.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/supplier-favorite/supplier-favorite.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/supplier-favorite/supplier-favorite.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/supplier-favorite/supplier-favorite.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/supplier/supplier.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/supplier/supplier.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/supplier/supplier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/supplier/supplier.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -213,10 +204,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP Request.enterprises | Create an enterprise" />
-      <item itemvalue="HTTP Request.authentications | Register new user" />
-      <item itemvalue="HTTP Request.users | Get user by email" />
       <item itemvalue="HTTP Request.authentications | Login an user" />
+      <item itemvalue="HTTP Request.authentications | Register new user" />
+      <item itemvalue="HTTP Request.enterprises | Create an enterprise" />
+      <item itemvalue="HTTP Request.users | Get user by email" />
       <item itemvalue="Spring Boot.AuthenticationsApplication" />
       <item itemvalue="Spring Boot.EnterprisesApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
@@ -274,7 +265,27 @@
       <workItem from="1748096511623" duration="6581000" />
       <workItem from="1748358956451" duration="3699000" />
       <workItem from="1748429969334" duration="622000" />
-      <workItem from="1748519085581" duration="6162000" />
+      <workItem from="1748519085581" duration="6166000" />
+      <workItem from="1748601278131" duration="3241000" />
+      <workItem from="1749130461117" duration="3739000" />
+      <workItem from="1749556445606" duration="6703000" />
+      <workItem from="1749727437277" duration="1820000" />
+      <workItem from="1749901086887" duration="159000" />
+      <workItem from="1749907660300" duration="641000" />
+      <workItem from="1749988159093" duration="604000" />
+      <workItem from="1750022643005" duration="661000" />
+      <workItem from="1750080721020" duration="885000" />
+      <workItem from="1750169227675" duration="746000" />
+      <workItem from="1750244840663" duration="4000" />
+      <workItem from="1750244998085" duration="776000" />
+      <workItem from="1750249902524" duration="32000" />
+      <workItem from="1750262791429" duration="602000" />
+      <workItem from="1750281573480" duration="5000" />
+      <workItem from="1750768553802" duration="2703000" />
+      <workItem from="1750843214626" duration="37000" />
+      <workItem from="1751975833621" duration="136000" />
+      <workItem from="1754224685908" duration="1523000" />
+      <workItem from="1754302853884" duration="2000" />
     </task>
     <servers />
   </component>

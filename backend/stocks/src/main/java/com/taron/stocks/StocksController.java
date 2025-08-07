@@ -19,11 +19,20 @@ public class StocksController {
         this.service = service;
     }
 
+    @GetMapping("/{id}")
+    Stock getOne(@PathVariable int id){
+        return this.service.getOne(id);
+    }
+
     @GetMapping("/getStocksBySupplier/{id}")
     public List<Stock> getStocksBySupplier(@PathVariable int id) {
         return service.getStocksBySupplierId(id);
     }
 
+    @GetMapping("/getStockBySupplierAndProduct/{idSupplier}/{idProduct}")
+    public Stock getStockBySupplierAndProduct(@PathVariable int idSupplier, @PathVariable int idProduct){
+        return this.service.getStockBySupplierAndProduct(idSupplier, idProduct);
+    }
 
     @DeleteMapping("/deleteBySupplierAndProduct/{idSupplier}/{idProduct}")
     public void deleteBySupplierAndProduct(@PathVariable int idSupplier, @PathVariable int idProduct) {
@@ -44,16 +53,10 @@ public class StocksController {
 
     @PatchMapping("/updateStock/{id}")
     public ResponseEntity<Stock> updateStock(@PathVariable int id, @RequestBody Stock newStockData) {
-        Optional<Stock> optionalStock = this.service.getOne(id);
-        if (optionalStock.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
 
-        Stock stock = optionalStock.get();
+        Stock stock = this.service.getOne(id);
 
-        // Mise à jour uniquement des champs modifiables
         stock.setQuantity(newStockData.getQuantity());
-        // Si besoin, ajoute ici d'autres champs à modifier comme ownerType, idOwner, etc.
 
         Stock updated = service.createOne(stock); // createOne fait office de save
         return ResponseEntity.ok(updated);
@@ -78,5 +81,4 @@ public class StocksController {
     void deleteOne(@PathVariable Integer id){
         this.service.deleteOne(id);
     }
-
 }

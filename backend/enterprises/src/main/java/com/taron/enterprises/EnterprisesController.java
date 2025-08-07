@@ -2,6 +2,7 @@ package com.taron.enterprises;
 
 
 import com.taron.enterprises.models.Enterprise;
+import jakarta.inject.Inject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/enterprises")
 public class EnterprisesController {
+
 
     private final EnterprisesService service;
 

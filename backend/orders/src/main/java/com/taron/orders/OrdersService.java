@@ -1,7 +1,9 @@
 package com.taron.orders;
 
 import com.taron.orders.models.Order;
+import com.taron.orders.repositories.OrderDetailsRepository;
 import com.taron.orders.repositories.OrdersRepository;
+import com.taron.orders.repositories.StockProxy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,9 +12,14 @@ import java.util.Optional;
 @Service
 public class OrdersService {
     private final OrdersRepository repository;
+    private final OrderDetailsRepository orderDetailsRepository;
 
-    public OrdersService(OrdersRepository repository) {
+    private final StockProxy stockProxy;
+
+    public OrdersService(OrdersRepository repository, OrderDetailsRepository orderDetailsRepository, StockProxy stockProxy) {
         this.repository = repository;
+        this.orderDetailsRepository = orderDetailsRepository;
+        this.stockProxy = stockProxy;
     }
 
     public Order createOne(Order order){

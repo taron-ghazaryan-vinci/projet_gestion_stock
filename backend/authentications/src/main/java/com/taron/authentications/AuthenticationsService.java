@@ -14,6 +14,7 @@ public class AuthenticationsService {
 
     private final UsersProxy usersProxy;
 
+
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     private final Algorithm algorithm = Algorithm.HMAC256("secret123"); // change le secret en prod
 
@@ -48,7 +49,7 @@ public class AuthenticationsService {
         return JWT.create()
                 .withSubject(email)
                 .withIssuedAt(new Date())
-                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 24h
+                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
                 .sign(algorithm);
     }
 }

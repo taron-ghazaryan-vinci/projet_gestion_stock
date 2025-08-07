@@ -69,6 +69,7 @@ public class UsersService {
     }
 
 
+    @Transactional
     public void removeFavorite(Integer idEnterprise, Integer idSupplier) {
         supplierRepository.deleteByIdEnterpriseAndIdSupplier(idEnterprise, idSupplier);
     }

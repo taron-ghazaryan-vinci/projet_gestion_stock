@@ -29,7 +29,11 @@ public class StocksService {
         this.repository.deleteById(id);
     }
 
-    public Optional<Stock> getOne(int id){
-        return this.repository.findById(id);
+    public Stock getOne(int id){
+        return this.repository.findById(id).orElseThrow(() -> new RuntimeException("Produit introuvable"));
+    }
+
+    public Stock getStockBySupplierAndProduct(int idSupplier, int idProduct){
+        return this.repository.findStockByIdProductAndIdOwnerAndOwnerType(idSupplier, idProduct, "supplier");
     }
 }
